@@ -512,41 +512,53 @@ nav .fas{
 
 /* theme toggle switch */
 #theme-toggle{
-    width: 60px;
-    height: 30px;
-    background: #333;
-    border-radius: 30px;
+    width: 70px;
+    height: 34px;
+    background: #1a1a2e;
+    border: 2px solid #555;
+    border-radius: 34px;
     cursor: pointer;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 7px;
-    transition: background 0.4s;
+    padding: 0 8px;
+    transition: background 0.4s, border-color 0.4s;
+    z-index: 10;
 }
 #theme-toggle #icon-sun{
-    font-size: 14px;
+    font-size: 15px;
     color: #f9d71c;
+    z-index: 1;
 }
 #theme-toggle #icon-moon{
-    font-size: 13px;
-    color: #fff;
+    font-size: 14px;
+    color: #c4c4ff;
+    z-index: 1;
 }
 #theme-toggle .toggle-ball{
     position: absolute;
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
     background: #fff;
     border-radius: 50%;
-    top: 3px;
+    top: 2px;
     left: 3px;
     transition: left 0.4s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 body.light-mode #theme-toggle{
-    background: #87ceeb;
+    background: #d4eaf7;
+    border-color: #87ceeb;
 }
 body.light-mode #theme-toggle .toggle-ball{
-    left: 33px;
+    left: 39px;
+}
+body.light-mode #theme-toggle #icon-sun{
+    color: #ff8c00;
+}
+body.light-mode #theme-toggle #icon-moon{
+    color: #6b7db3;
 }
 
 /* light mode overrides */
