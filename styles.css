@@ -31,6 +31,11 @@ nav{
     display: flex;
     align-items: center;justify-content: space-between;
     flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 10px;
 }
 .logo{
     width: 140px;
@@ -73,6 +78,34 @@ nav ul li a:hover::after{
 .header-text h1 span{
     color:#1A5D1A ;
 }
+
+/* typing cursor animation */
+.cursor{
+    display: inline-block;
+    color: #146C94;
+    font-weight: 300;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0%,100%{ opacity: 1; }
+    50%{ opacity: 0; }
+}
+#typed-text{
+    color: #146C94;
+    font-weight: 500;
+}
+
+/* scroll reveal animation */
+.reveal{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.active-reveal{
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* about styling */
 #about{
     padding: 80px 0;
@@ -89,6 +122,10 @@ nav ul li a:hover::after{
 .about-col-1 img{
    width: 100%;
    border-radius: 15px;
+   transition: box-shadow 0.5s;
+}
+.about-col-1 img:hover{
+   box-shadow: 0 0 25px rgba(20, 108, 148, 0.4);
 }
 .about-col-2{
     flex-basis: 60%;
@@ -127,6 +164,13 @@ width: 50%;
 .tab-contents ul li{
 list-style: none;
 margin: 10px 0;
+padding: 8px 12px;
+border-radius: 6px;
+transition: background 0.3s, transform 0.3s;
+}
+.tab-contents ul li:hover{
+background: #1a1a1a;
+transform: translateX(5px);
 }
 .tab-contents ul li span{
     color: #b54769;
@@ -154,8 +198,8 @@ margin: 10px 0;
     font-size: 13px;
     font-weight: 200;
     border-radius: 10px;
-    transition: background 0.5s, transform 0.5s;
-
+    border-left: 4px solid transparent;
+    transition: background 0.5s, transform 0.5s, border-color 0.5s;
 }
 .services-list div i{
     font-size: 50px;
@@ -176,8 +220,9 @@ display: inline-block;
 }
 
 .services-list div:hover{
-background: #73BBC9;
+background: linear-gradient(135deg, #1a3a4a, #146C94);
 transform: translateY(-10px);
+border-left-color: #73BBC9;
 }
 
 /* project styling */
@@ -286,6 +331,7 @@ transform: translateY(-10px);
 }
 .event-card:hover{
     transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(20, 108, 148, 0.3);
 }
 .event-img img{
     width: 100%;
