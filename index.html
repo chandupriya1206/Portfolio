@@ -382,6 +382,10 @@
             sidemeu.style.right = "-200px";
         }
 
+        document.querySelectorAll('#sidemenu a').forEach(function(link) {
+            link.addEventListener('click', closemenu);
+        });
+
 
 
 
