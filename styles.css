@@ -510,24 +510,43 @@ nav .fas{
     color: #F6FFDE;
 }
 
-/* theme toggle button */
+/* theme toggle switch */
 #theme-toggle{
-    background: none;
-    border: 2px solid #fff;
-    color: #fff;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    width: 60px;
+    height: 30px;
+    background: #333;
+    border-radius: 30px;
     cursor: pointer;
-    font-size: 18px;
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    transition: background 0.3s, color 0.3s, border-color 0.3s;
+    justify-content: space-between;
+    padding: 0 7px;
+    transition: background 0.4s;
 }
-#theme-toggle:hover{
-    background: #146C94;
-    border-color: #146C94;
+#theme-toggle #icon-sun{
+    font-size: 14px;
+    color: #f9d71c;
+}
+#theme-toggle #icon-moon{
+    font-size: 13px;
+    color: #fff;
+}
+#theme-toggle .toggle-ball{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    transition: left 0.4s;
+}
+body.light-mode #theme-toggle{
+    background: #87ceeb;
+}
+body.light-mode #theme-toggle .toggle-ball{
+    left: 33px;
 }
 
 /* light mode overrides */
@@ -544,15 +563,6 @@ body.light-mode nav{
 }
 body.light-mode nav ul li a{
     color: #222;
-}
-body.light-mode #theme-toggle{
-    border-color: #222;
-    color: #222;
-}
-body.light-mode #theme-toggle:hover{
-    background: #146C94;
-    border-color: #146C94;
-    color: #fff;
 }
 body.light-mode .header-text,
 body.light-mode .header-text h1,

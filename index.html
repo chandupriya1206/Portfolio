@@ -35,9 +35,11 @@
                     <li><a href="#publications">Publications</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li>
-                        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-                            <i class="fas fa-moon" id="theme-icon"></i>
-                        </button>
+                        <div id="theme-toggle" onclick="toggleTheme()" title="Switch theme">
+                            <i class="fas fa-sun" id="icon-sun"></i>
+                            <i class="fas fa-moon" id="icon-moon"></i>
+                            <div class="toggle-ball"></div>
+                        </div>
                     </li>
                     <i class="fas fa-times" onclick="closemenu()"></i>
                 </ul>
@@ -450,14 +452,9 @@
     <script>
         function toggleTheme() {
             document.body.classList.toggle('light-mode');
-            var icon = document.getElementById('theme-icon');
             if (document.body.classList.contains('light-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
                 localStorage.setItem('theme', 'light');
             } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
                 localStorage.setItem('theme', 'dark');
             }
         }
@@ -465,8 +462,6 @@
             try {
                 if (localStorage.getItem('theme') === 'light') {
                     document.body.classList.add('light-mode');
-                    document.getElementById('theme-icon').classList.remove('fa-moon');
-                    document.getElementById('theme-icon').classList.add('fa-sun');
                 }
             } catch(e) {}
         })();
