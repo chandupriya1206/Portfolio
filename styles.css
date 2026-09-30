@@ -22,19 +22,18 @@ body{
     background-image: url(images/bg2.jpg);
     background-size: cover;
     background-position: center;
-
+    padding-top: 70px;
 }
 .container{
     padding: 10px 10%;
 }
 nav{
     display: flex;
-    align-items: center;justify-content: space-between;
-    flex-wrap: wrap;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    border-radius: 0;
-    padding: 10px 5%;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 12px 5%;
     position: fixed;
     top: 0;
     left: 0;
@@ -44,9 +43,16 @@ nav{
 }
 .logo{
     width: 140px;
-
 }
- 
+.nav-right{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+}
 nav ul li{
     display: inline-block;
     list-style: none;
@@ -436,48 +442,56 @@ form .btn2{
 }
 
 /* css for small screen */
-nav .fas{
+.nav-right .fa-bars{
+    display: none;
+}
+nav ul .fa-times{
     display: none;
 }
 
 @media only screen and (max-width:600px) {
     #header{
         background-image: url(images/bg1_phn_v.jpg);
-    }  
+    }
     .header-text{
         margin-top: 100%;
         font-size: 16px;
     }
     .header-text h1{
-        font-size: 30px;  
+        font-size: 30px;
     }
-    nav .fas{
+    .nav-right .fa-bars{
         display: block;
         font-size: 25px;
+        color: #fff;
+        cursor: pointer;
     }
     nav ul{
         background: #1A5D1A;
         position: fixed;
         top: 0;
-        right: -200px;
-        width: 200px;
+        right: -250px;
+        width: 250px;
         height: 100vh;
-        padding-top: 50px;
-        z-index: 2;
+        padding-top: 60px;
+        z-index: 100;
         transition: right 0.5s;
+        flex-direction: column;
+        align-items: flex-start;
     }
     nav ul li{
         display: block;
-        margin: 25px;
-
+        margin: 15px 25px;
     }
     nav ul .fa-times{
+        display: block;
         position: absolute;
-        top: 25px;
-        left: 25px;
+        top: 20px;
+        left: 20px;
         cursor: pointer;
-        z-index: 10;
+        z-index: 110;
         font-size: 22px;
+        color: #fff;
         padding: 10px;
     }
     .sub-title{
@@ -684,5 +698,8 @@ body.light-mode .tab-contents#other a{
     }
     body.light-mode nav ul li a{
         color: #fff;
+    }
+    body.light-mode .nav-right .fa-bars{
+        color: #222;
     }
 }

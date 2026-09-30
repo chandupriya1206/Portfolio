@@ -22,29 +22,30 @@
 </head>
 
 <body>
+    <nav>
+        <img src="images/my logo 1.png" class="logo" alt="Chandu Priya logo">
+        <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+        </ul>
+        <div class="nav-right">
+            <div id="theme-toggle" onclick="toggleTheme()" title="Switch theme">
+                <i class="fas fa-sun" id="icon-sun"></i>
+                <i class="fas fa-moon" id="icon-moon"></i>
+                <div class="toggle-ball"></div>
+            </div>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </div>
+    </nav>
+
     <div id="header">
         <div class="container">
-            <nav>
-                <img src="images/my logo 1.png" class="logo" alt="Chandu Priya logo">
-                <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#publications">Publications</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li>
-                        <div id="theme-toggle" onclick="toggleTheme()" title="Switch theme">
-                            <i class="fas fa-sun" id="icon-sun"></i>
-                            <i class="fas fa-moon" id="icon-moon"></i>
-                            <div class="toggle-ball"></div>
-                        </div>
-                    </li>
-                    <i class="fas fa-times" onclick="closemenu()"></i>
-                </ul>
-                <i class="fas fa-bars" onclick="openmenu()"></i>
-            </nav>
             <div class="header-text">
 
                 <h1>Hi, I'm <span> Chandu Priya </span> <br> Matavalam </h1>
@@ -379,7 +380,7 @@
         }
 
         function closemenu() {
-            sidemeu.style.right = "-200px";
+            sidemeu.style.right = "-250px";
         }
 
         document.querySelectorAll('#sidemenu a').forEach(function(link) {
